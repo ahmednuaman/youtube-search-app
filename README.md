@@ -1,4 +1,2 @@
-youtube-search-app
-==================
-
-A simple YouTube search app written in AngularJS (and a bare vanilla js version too, hopefully)
+# AngularJS powered YouTube search app
+This is a simple app built on [AngularJS](http://angularjs.org/) that searches YouTube for you. AngularJS is (IMHO) a less structured and strict framework compared to, say, [BackboneJS](http://backbonejs.org) so this was just a learning exercise.
