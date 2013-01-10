@@ -10,9 +10,35 @@
     </head>
     <body>
         <div id="container">
-            <ng-view></ng-view>
+            <div id="search-holder" ng-controller="SearchController">
+                <div id="search-box">
+                    <div id="search-box-error" class="alert alert-error" ng-show="hasError">
+                        An error has occurred!
+                    </div>
+                    <form ng-submit="onSearchSubmit()">
+                        <label>
+                            Search for
+                            <input name="search" type="search" ng-model="varSearch" placeholder="Search for..." />
+                            <button type="submit">Go</button>
+                        </label>
+                    </form>
+                </div>
+                <div id="search-results">
+                    <ul>
+                        <li ng-repeat="item in items">
+                            <a href="{{ item.href }}">
+                                <img src="{{ item.thumbnail }}" alt="{{ item.title }}" />
+                                <span>{{ item.title }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <script src="assets/js/vendor/angular-1.0.3.js"></script>
         <script src="assets/js/app.js"></script>
+        <script src="assets/js/app.controller.search.js"></script>
+        <script src="assets/js/app.factory.youtube.js"></script>
+        <script src="assets/js/app.service.youtube.js"></script>
     </body>
 </html>
